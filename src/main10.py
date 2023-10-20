@@ -1,38 +1,28 @@
-
-def tipo_pizza(pizza):
-    if pizza == "vegetariana":
+def es_numero_primo(numero):
+    if numero <= 1:
+        return False
+    if numero <= 3:
         return True
-    else:
+    if numero % 2 == 0 or numero % 3 == 0:
         return False
 
-def ingredientes_pizza(pizza,ingrediente):
-    if pizza:
-        if ingrediente == "pimiento" or ingrediente == "tofu":
-            return True 
-        else:
+    i = 5
+    while i * i <= numero:
+        if numero % i == 0 or numero % (i + 2) == 0:
             return False
-    elif not pizza:
-        if ingrediente == "peperoni" or ingrediente == "jamon" or ingrediente == "salmon":
-            return True 
-        else:
-            return False
-    else:
-        return False
+        i += 6
+
+    return True
 
 if __name__ == "__main__":
 
-    pizza = input("Que tipo de Pizza quieres (vegetariana/normal)\n").lower()
-    tipo = tipo_pizza(pizza)
+    try:
+        numero = int(input("Ingrese un numero entero: "))
+    except ValueError:
+        print("Ingrese un numero entero valido.")
 
-    if tipo:
-        ingrediente = input("Selecciona uno de los Ingredientes (Pimiento/Tofu)\n").lower()
-        if ingredientes_pizza(tipo,ingrediente):
-            print("Seleccionaste pizza Vegetariana con Tomate, mozarella y " + ingrediente)
-        else: 
-            print("No tenemos pizza con esos ingredientes.")
+    if es_numero_primo(numero):
+        print(f"{numero} es un numero primo.")
     else:
-        ingrediente = input("Selecciona uno de los Ingredientes (Peperoni/Jamon/Salmon)\n").lower()
-        if ingredientes_pizza(tipo,ingrediente):
-            print("Seleccionaste pizza con Tomate, mozarella y " + ingrediente)
-        else: 
-            print("No tenemos pizza con esos ingredientes.")
+        print(f"{numero} no es un numero primo.")
+

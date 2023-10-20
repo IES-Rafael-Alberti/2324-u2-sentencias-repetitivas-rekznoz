@@ -1,16 +1,10 @@
-from src.main10 import tipo_pizza, ingredientes_pizza
+from src.main10 import es_numero_primo
 
-def test_tipo_pizza():
-    assert tipo_pizza("vegetariana") == True
-    assert tipo_pizza("no vegetariana") == False
-    assert tipo_pizza("vegana") == False
-
-def test_ingredientes_pizza():
-    assert ingredientes_pizza(True, "pimiento") == True
-    assert ingredientes_pizza(True, "tofu") == True
-    assert ingredientes_pizza(True, "peperoni") == False
-    assert ingredientes_pizza(False, "pimiento") == False
-    assert ingredientes_pizza(False, "peperoni") == True
-    assert ingredientes_pizza(False, "jamon") == True
-    assert ingredientes_pizza(False, "salmon") == True
-    assert ingredientes_pizza(True, "queso") == False
+def test_es_numero_primo():
+    assert es_numero_primo(2) == True
+    assert es_numero_primo(3) == True
+    assert es_numero_primo(17) == True
+    assert es_numero_primo(20) == False
+    assert es_numero_primo(29) == True
+    assert es_numero_primo(1) == False
+    assert es_numero_primo(0) == False

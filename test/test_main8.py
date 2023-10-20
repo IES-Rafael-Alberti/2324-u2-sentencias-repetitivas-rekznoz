@@ -1,11 +1,7 @@
-from src.main8 import rendimiento, beneficios
+from src.main8 import generar_triangulo
 
-def test_determinar_rendimiento():
-    assert rendimiento(0.0) == "Inaceptable"
-    assert rendimiento(0.4) == "Aceptable"
-    assert rendimiento(0.6) == "Meritorio"
-
-def test_calcular_beneficios():
-    assert beneficios(0.0) == 0
-    assert beneficios(0.4) == 960
-    assert beneficios(0.6) == 1440
+def test_generar_triangulo():
+    assert generar_triangulo(1) == "1\n"
+    assert generar_triangulo(3) == "1\n\n3 1\n"
+    assert generar_triangulo(5) == "1\n\n3 1\n\n5 3 1\n"
+    assert generar_triangulo(7) == "1\n\n3 1\n\n5 3 1\n\n7 5 3 1\n"

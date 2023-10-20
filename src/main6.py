@@ -1,15 +1,16 @@
-def obtener_grupo(nombre, sexo):
-    if (sexo == "mujer" and nombre.lower() < 'm') or (sexo == "hombre" and nombre.lower() > 'n'):
-        return "A"
-    else:
-        return "B"
+def crear_triangulo(numero_filas):
+    if numero_filas < 1:
+        return ""
 
-if __name__ == "__main__":
-    nombre = input("Introduce tu nombre ").lower()
-    sexo = input("Introduce tu sexo (mujer/hombre) ").lower()
+    triangulo = ""
+    for i in range(1, numero_filas + 1):
+        triangulo += "*" * i
+        triangulo += "\n"
     
-    if sexo not in ["mujer", "hombre"]:
-        print("Error: Debes ingresar 'mujer' o 'hombre' como sexo.")
-    else:
-        grupo = obtener_grupo(nombre, sexo)
-        print(f"Tu grupo es: {grupo}")
+    return triangulo
+    
+if __name__ == "__main__":
+    numero_filas = int(input("Introduce el numero de filas del triangulo "))
+    triangulo = crear_triangulo(numero_filas)
+    
+    print(triangulo)

@@ -1,29 +1,18 @@
+def generar_triangulo(numero):
+    triangulo = ""
+    for i in range(1, numero + 1):
+        linea = " ".join(str(j) for j in range(i, 0, -2) if j % 2 != 0)
+        triangulo += linea + "\n"
+    return triangulo
 
-def rendimiento(puntuacion):
-    if puntuacion == 0.0:
-        nivel = "Inaceptable"
-    elif puntuacion == 0.4:
-        nivel = "Aceptable"
-    else:
-        nivel = "Meritorio"
+if __name__ == "__main__":
     
-    return nivel
-
-def beneficios(puntuacion):
-    if puntuacion == 0.0:
-        beneficios = 0
-    else:
-        beneficios = 2400 * puntuacion
-
-    return beneficios
-
-if __name__ == "__main":
     try:
-        puntuacion = float(input("Introduce tu puntuación: "))
-        nivel = rendimiento(puntuacion)
-        profit = beneficios(puntuacion)
-        
-        print(f"Tu nivel de rendimiento es: {nivel}")
-        print(f"Recibiras {profit}€ en beneficios.")
+        numero = int(input("Un numero entero "))
+        if numero < 1:
+            raise ValueError
     except ValueError:
-        print("Error: Debes ingresar un valor valido para la puntuacion.")
+        print("Pon un numero entero valido.")
+
+    triangulo = generar_triangulo(numero)
+    print(triangulo)

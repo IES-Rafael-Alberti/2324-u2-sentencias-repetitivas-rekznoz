@@ -1,7 +1,5 @@
-from src.main9 import calcular_precio_entrada
+from src.main9 import validar_contrasena
 
-def test_calcular_precio_entrada():
-    assert calcular_precio_entrada(2) == 0
-    assert calcular_precio_entrada(5) == 5
-    assert calcular_precio_entrada(12) == 5
-    assert calcular_precio_entrada(25) == 10
+def test_validar_contrasena():
+    assert validar_contrasena("pass1234","pass1234") == True
+    assert validar_contrasena("pass1234","contrasena123") == False
