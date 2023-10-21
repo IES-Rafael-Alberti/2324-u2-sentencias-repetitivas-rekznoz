@@ -1,28 +1,19 @@
-def es_numero_primo(numero):
-    if numero <= 1:
-        return False
-    if numero <= 3:
-        return True
-    if numero % 2 == 0 or numero % 3 == 0:
-        return False
-
-    i = 5
-    while i * i <= numero:
-        if numero % i == 0 or numero % (i + 2) == 0:
-            return False
-        i += 6
-
-    return True
+def sumas_enteros(numero,suma):
+    if numero > 0:
+        suma += numero
+    return suma
 
 if __name__ == "__main__":
 
-    try:
-        numero = int(input("Ingrese un numero entero: "))
-    except ValueError:
-        print("Ingrese un numero entero valido.")
-
-    if es_numero_primo(numero):
-        print(f"{numero} es un numero primo.")
-    else:
-        print(f"{numero} no es un numero primo.")
-
+    suma = 0
+    entrada = None
+    while entrada != 0:
+        try:
+            entrada = int(input("Ingresa un numero entero (0 para finalizar):  "))
+        except ValueError:
+            print("Introduce un numero valido")
+            
+        if entrada != 0:
+            suma = sumas_enteros(entrada,suma)
+    
+    print(suma)

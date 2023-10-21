@@ -1,10 +1,7 @@
-from src.main10 import es_numero_primo
+from src.main18 import suma_digitos
 
-def test_es_numero_primo():
-    assert es_numero_primo(2) == True
-    assert es_numero_primo(3) == True
-    assert es_numero_primo(17) == True
-    assert es_numero_primo(20) == False
-    assert es_numero_primo(29) == True
-    assert es_numero_primo(1) == False
-    assert es_numero_primo(0) == False
+def test_suma_digitos_un_digito():
+    assert suma_digitos(5) == 5
+    assert suma_digitos(123456) == 21
+    assert suma_digitos(0) == 0
+    assert suma_digitos(-888) == 0

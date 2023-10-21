@@ -1,10 +1,8 @@
-from src.main10 import es_numero_primo
+from src.main16 import numeros_enteros
 
-def test_es_numero_primo():
-    assert es_numero_primo(2) == True
-    assert es_numero_primo(3) == True
-    assert es_numero_primo(17) == True
-    assert es_numero_primo(20) == False
-    assert es_numero_primo(29) == True
-    assert es_numero_primo(1) == False
-    assert es_numero_primo(0) == False
+def test_numeros_enteros_numero_mayor():
+    assert numeros_enteros(5, 3) == 5
+    assert numeros_enteros(3, 3) == 3
+    assert numeros_enteros(2, 4) == 4
+    assert numeros_enteros(-1, 5) == 5
+    assert numeros_enteros(0, 7) == 7
