@@ -1,28 +1,16 @@
-def es_numero_primo(numero):
-    if numero <= 1:
-        return False
-    if numero <= 3:
-        return True
-    if numero % 2 == 0 or numero % 3 == 0:
-        return False
-
-    i = 5
-    while i * i <= numero:
-        if numero % i == 0 or numero % (i + 2) == 0:
-            return False
-        i += 6
-
-    return True
+def buscar_letra_frase(frase, letra):
+    for i, caracter in enumerate(frase):
+        if caracter == letra:
+            return i + 1
+    return -1 
 
 if __name__ == "__main__":
+    frase = input("Ingresa una frase ")
+    letra = input("Ingresa una letra a buscar ")
 
-    try:
-        numero = int(input("Ingrese un numero entero: "))
-    except ValueError:
-        print("Ingrese un numero entero valido.")
+    posicion = buscar_letra_frase(frase, letra)
 
-    if es_numero_primo(numero):
-        print(f"{numero} es un numero primo.")
+    if posicion > 0:
+        print(f"La letra '{letra}' se encontro en la posicion {posicion} de la frase")
     else:
-        print(f"{numero} no es un numero primo.")
-
+        print(f"No se encontro la letra '{letra}' en la frase")

@@ -1,28 +1,34 @@
-def es_numero_primo(numero):
-    if numero <= 1:
-        return False
-    if numero <= 3:
-        return True
-    if numero % 2 == 0 or numero % 3 == 0:
-        return False
 
-    i = 5
-    while i * i <= numero:
-        if numero % i == 0 or numero % (i + 2) == 0:
-            return False
-        i += 6
-
-    return True
+def load_menu(opcion):
+    if opcion == '1':
+        return 1
+    elif opcion == '2':
+        return 2
+    elif opcion == '3':
+        return 3
+    else:
+        return 0
 
 if __name__ == "__main__":
 
-    try:
-        numero = int(input("Ingrese un numero entero: "))
-    except ValueError:
-        print("Ingrese un numero entero valido.")
+    opcion = 0
 
-    if es_numero_primo(numero):
-        print(f"{numero} es un numero primo.")
-    else:
-        print(f"{numero} no es un numero primo.")
+    while opcion != 3:
+
+        print("Menu")
+        print("1 - Comenzar programa")
+        print("2 - Imprimir listado")
+        print("3 - Finalizar programa")
+
+        opcion = input("Elige una opcion (1, 2 o 3): ")
+        opcion = load_menu(opcion)
+
+        if opcion == 1:
+            print("Comenzar programa")
+        elif opcion == 2:
+            print("Imprimir listado")
+        elif opcion == 3:
+            print("Finalizar programa")
+        else:
+            print("Opción incorrecta ! selecciona una opcion valida (1 2 o 3)")
 
